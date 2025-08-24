@@ -13,7 +13,7 @@ function Login() {
     }
 
   return (
-    <div className="login">
+    <div>
       <h1>Login</h1>
       <form onSubmit={handleFormData}
         ref={formData}

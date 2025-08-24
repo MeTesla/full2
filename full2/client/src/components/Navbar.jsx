@@ -2,7 +2,6 @@ import { Link } from "react-router-dom"
 import { useContext } from "react"
 import { AuthContext } from "../contexts/Auth"
 import { toast } from "react-toastify"
-import chef from '../assets/images/chef.png'
 
 function Navbar (){
     const {user, setUser} = useContext(AuthContext)
@@ -12,10 +11,7 @@ function Navbar (){
         localStorage.removeItem('token')
     }
     return(
-        <div className="navbar" >
-            <Link to='/' className="logo" >
-                <img src={chef} style = {{width:'50px', height:'50px'}} className="chef" />
-            </Link>
+        <div className="navbar">
         {user ? 
             <ul className="menu">
                 <li>

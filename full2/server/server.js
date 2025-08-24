@@ -4,7 +4,6 @@ const cors = require('cors')
 const recipeRouter = require('./routes/recipeRoutes.js')
 const userRouter = require('./routes/userRoutes.js')
 const data = require('./data.js')
-const RecipeModel = require('./models/RecipeModel.js')
 
 const app=express()
 
@@ -20,14 +19,6 @@ app.get('/quiz', (req, res)=>{
     res.json(questions[0])
 })
 // l'ordre est important : mettre user après recipe déclenche la demande d'authentification pour accéder à BD
-app.get('/allrecipes', async(req, res)=>{
-    try {
-        const recipes = await RecipeModel.find()
-        res.status(200).json(recipes)
-    } catch (error) {
-        res.status(400).json({error : error.message})
-    }
-})
 app.use(userRouter)
 app.use(recipeRouter)
 

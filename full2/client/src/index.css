@@ -7,13 +7,8 @@
 }
 
 .navbar{
-  position: absolute;
-  width: 100%;
-  padding: 10px 20px;
-  display: flex;
-  align-items: center;
-  justify-content: space-between;
-
+  padding: 20px;
+  border-bottom: 1px solid gray;;
 }
 .menu{
   display: flex;
@@ -26,13 +21,6 @@
 
 li {
   font-size: 1.2rem;
-
-}
-
-li a{
-  color: white;
-  text-decoration:none;
-  font-weight: bold ;
 }
 
 .btn{
@@ -45,40 +33,6 @@ li a{
   cursor: pointer;
 }
 
-.hero{
-  height: 700px;
-  background-image: url('./assets/images/omelette.jpg');
-  background-size: cover;
-  background-repeat: no-repeat;
-  display: flex;
-  align-items: center;
-  justify-content: center;
-  
-}
-.hero .titles{
-  background-color: rgba(0, 0, 0, 0.411);
-  padding: 30px 40px;
-  color: white;
-  border-radius: 10px;
-}
-
-.hero .titles:first-child{
-  font-size: 2rem;
-}
-
-.all-recettes{
-  display: grid;
-  grid-template-columns: 1fr 1fr 1fr ;
-}
-
-.login{
-  padding-top: 60px;
-  height: 80vh;
-  display: flex;
-  flex-direction: column;
-  justify-content: center;
-  align-items: center;
-}
 .login-form{
   margin-top: 30px;
 }
@@ -125,13 +79,6 @@ li a{
   position: absolute;
   top:10px; right: 10px;
   cursor: pointer;
-
-}
-.fav{
-    color : red;
-}
-.not{
-  color: green
 }
 form{
   padding: 20px;
@@ -161,13 +108,4 @@ input[type='text'], input[type="submit"]{
   display: block;
   margin: 20px auto;
   border-radius: 5px;
-}
-
-.swipcontainer{
-  width: 100vw;
-  flex-grow: 1;
-}
-.swip{
-  width: 90%;
-  border : 1px solid
 }

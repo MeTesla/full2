@@ -1,31 +1,32 @@
 import { useState } from "react"
 import { useNavigate, useLocation } from "react-router-dom"
+import { toast } from "react-toastify"
  
-function NewRecipe(){
-    const [recipe, setRecipe] = useState("")
-    const [description, setDescription] = useState("")
+function EditRecipe(){
+
     //prop to parent = data + function
     const navigate = useNavigate()
     const location = useLocation()
-    //const {id, recip, descriptio} = location.state || {}
+    const {id, recip, descriptio} = location.state || {}
+    
+    const [recipe, setRecipe] = useState(recip)
+    const [description, setDescription] = useState(descriptio)
 
-    //console.log(id, recip, descriptio);
-
-
-    const handleNewRecipe = async(ev)=>{
+    
+    const handleEditRecipe = async(ev)=>{
         ev.preventDefault()
 
     
         /////
-          const newRecipe = {
+          const editedRecipe = {
                     "recipe": recipe,
                     "description": description
         }
         const token= localStorage.getItem('token')
-        const response = await fetch("http://localhost:3000/recipes/newRecipe",
+        const response = await fetch(`http://localhost:3000/recipes/editRecipe/${id}`,
 
             {
-                method: "POST",
+                method: "PUT",
                 headers:{
                     
                     Authorization : `Bearer ${token}`,
@@ -33,18 +34,18 @@ function NewRecipe(){
                 },
 
             
-                body: JSON.stringify(newRecipe) // !important
+                body: JSON.stringify(editedRecipe) // !important
                 
             }
         )
         const data = await response.json()
         console.log(data);
-        ///
-        navigate("/recipes")
+        ///navigate("/recipes")
+        toast.success('La recette est mise à jour avec succès')
     }
     return(
         <div>
-            <h1>Ajouter une recette</h1>
+            <h1>Add recipe</h1>
 
             <form>
                 <input type="text" name="recipe" 
@@ -52,14 +53,15 @@ function NewRecipe(){
                     onChange={(ev)=>setRecipe(ev.target.value)} 
                     placeholder="Nom de la recette"
                 />
+                
                 <input type="text" name="description" 
                     value={description} 
                     onChange={(ev)=>setDescription(ev.target.value)} 
                     placeholder="Description de la recette ..." 
                 />
-                
+
                 <input type="submit" name=""
-                    onClick={handleNewRecipe}
+                     onClick={handleEditRecipe}
                 />
             </form>
         </div>
@@ -67,4 +69,4 @@ function NewRecipe(){
     )
 }
 
-export default NewRecipe
+export default EditRecipe
