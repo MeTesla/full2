@@ -1,4 +1,6 @@
 //phone git
+
+//pc git
 const express = require('express')
 const connect = require('./connect.js')
 const cors = require('cors')
