@@ -7,6 +7,8 @@ import { faPen } from '@fortawesome/free-solid-svg-icons'
 import { faBookmark } from '@fortawesome/free-solid-svg-icons'
 
 function Recipes (){
+
+
     const [recipes, setRecipes] = useState([])
     const [fav, setFav] = useState([])
     const navigate = useNavigate();

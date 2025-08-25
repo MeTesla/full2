@@ -67,8 +67,22 @@ li a{
 }
 
 .all-recettes{
+  position : relative;
   display: grid;
   grid-template-columns: 1fr 1fr 1fr ;
+  width : 70%;
+  margin : auto;
+}
+.all-recettes .card-recipe{
+  padding: 30px 15px;
+}
+.plus{
+  position: absolute;
+  bottom: -60px; right: 0px;
+  font-size: 3rem;
+  color: green;
+  font-weight: bolder;
+  cursor: pointer;
 }
 
 .login{

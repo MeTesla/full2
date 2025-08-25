@@ -21,8 +21,9 @@ app.get('/quiz', (req, res)=>{
 })
 // l'ordre est important : mettre user après recipe déclenche la demande d'authentification pour accéder à BD
 app.get('/allrecipes', async(req, res)=>{
+    const limit = parseInt(req.query.limit)
     try {
-        const recipes = await RecipeModel.find()
+        const recipes = await RecipeModel.find().limit(limit)
         res.status(200).json(recipes)
     } catch (error) {
         res.status(400).json({error : error.message})
@@ -30,9 +31,6 @@ app.get('/allrecipes', async(req, res)=>{
 })
 app.use(userRouter)
 app.use(recipeRouter)
-
-
-
 
 app.listen('3000', ()=>{
     console.log("Server run on port 3000");    

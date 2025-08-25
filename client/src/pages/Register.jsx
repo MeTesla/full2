@@ -1,4 +1,5 @@
 import {useContext, useRef} from 'react'
+import { Link } from 'react-router-dom'
 import {AuthContext} from '../contexts/Auth'
 function Register() {
 
@@ -19,6 +20,9 @@ function Register() {
         <input type="email" name="email" placeholder='Votre émail ...' />
         <input type="password" name="password" placeholder='Mot de passe ...' />
         <button type="submit">Register</button>
+        <div style={{textAlign:'center'}}>
+          Vous avez un compte, <Link to="/login"> Cliquez ici</Link>
+        </div>
       </form> 
     </div>
   )
