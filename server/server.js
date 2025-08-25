@@ -1,4 +1,4 @@
-//phone git
+//phone git 2 hdbdbd
 /* 
 1- create repo on git hub. laisser vierge
 2- in local (pc): 
@@ -11,7 +11,7 @@
     git init, 
     create credentials user name & email
     git colone https:github.com/MeTesla/full2.git || git remote add origin url_repo
-    Modifier pui PULL + TOKEN
+    Modifier puis PULL + TOKEN
 
 */
 const express = require('express')
