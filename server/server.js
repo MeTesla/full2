@@ -1,4 +1,4 @@
-//phone git 2 hdbdbd
+// Supprimer de pc
 /* 
 1- create repo on git hub. laisser vierge
 2- in local (pc): 
