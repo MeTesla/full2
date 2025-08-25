@@ -1,6 +1,19 @@
 //phone git
+/* 
+1- create repo on git hub. laisser vierge
+2- in local (pc): 
+    git init, 
+    create credentials user name & email
+    lier local à distant:       git remote add origin URL_DU_DEPOT
+    Push pc repo to git hub :   git push -u origin main
+    Vérifier local est lié      git remote -v
+3- in local (phone /tablet) :
+    git init, 
+    create credentials user name & email
+    git colone https:github.com/MeTesla/full2.git || git remote add origin url_repo
+    Modifier pui PULL + TOKEN
 
-//pc git
+*/
 const express = require('express')
 const connect = require('./connect.js')
 const cors = require('cors')
