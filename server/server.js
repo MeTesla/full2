@@ -1,5 +1,6 @@
 // Supprimer de pc
 // From tablet
+// From phone again
 /* 
 1- create repo on git hub. laisser vierge
 2- in local (pc): 
